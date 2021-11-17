@@ -8,7 +8,7 @@
 int main(){
 void func_a(int[10][10]);
 int func_b(int[10][10], int i, int j);
-int str2int(char*);
+int func_c(int[10][10], int i, int j);
 
     
     char ch;
@@ -20,20 +20,11 @@ int str2int(char*);
             if (ch == 'A')
             {
                 func_a(arr);
-                for (int i = 0; i < 10; i++)
-                {
-                    for (int j = 0; j < 10; j++)
-                    {
-                        printf("%d ", arr[i][j]);
-                    }
-                    printf("\n");
-                }   
             }
             if (ch == 'B')
             {
                 int i,j;
                 scanf(" %d %d", &i, &j);
-                printf("%d ,%d", i, j);
                 if(func_b(arr,i,j) == 1){
                     printf("True \n");
                 }
@@ -43,7 +34,11 @@ int str2int(char*);
             }
             if (ch == 'C')
             {
-                /* code */
+                int i,j;
+                scanf(" %d %d", &i, &j);
+                int res = func_c(arr,i,j);
+                printf("%d\n", res);
+
             }
             
             scanf(" %c", &ch);

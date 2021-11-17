@@ -2,6 +2,7 @@
 #include <string.h>
 #include <sys/queue.h>
 
+// if ch == A
 int char2dig(char ch){
     return ch - '0';
 }
@@ -44,7 +45,7 @@ void func_a(int arr[10][10]){
     }
     return;
 }
-
+// if ch == B  
 int q[10], visited[10], n = 10,f = 0, r = -1;
 void bfs(int v, int arr[10][10]){
 
@@ -87,6 +88,50 @@ int func_b(int arr[10][10], int i, int j){
     
     
 
+}
+// if ch == C
+int min(int a, int b){
+    if (a<b)
+    {
+        return a;
+    }
+    return b;
+}
+
+
+int func_c(int arr[10][10], int i, int j){
+
+    if (func_b(arr,i,j) == 0)       //if there is no path return -1
+    {
+        return -1;
+    }
+
+    int copy[10][10];
+    for (int i = 0; i < 10; i++)
+    {
+        for (int j = 0; j < 10; j++)
+        {
+            if((arr[i][j] != 0) && (i != j)){    
+                copy[i][j] = arr[i][j];
+            }
+            else{
+                copy[i][j] = 10000;
+            }
+        }
+    }
+
+    for (int k = 0; k < 10; k++)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                copy[i][j] = min(copy[i][j], copy[i][k] + copy[k][j]);
+            }
+        }
+    }
+    
+    return copy[i][j];      //return the shortest path from i to j
 }
 
 
