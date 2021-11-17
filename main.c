@@ -6,6 +6,7 @@
 
 
 int main(){
+    
 void func_a(int[10][10]);
 int func_b(int[10][10], int i, int j);
 int func_c(int[10][10], int i, int j);
