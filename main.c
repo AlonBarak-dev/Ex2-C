@@ -27,10 +27,10 @@ int func_c(int[10][10], int i, int j);
                 int i,j;
                 scanf(" %d %d", &i, &j);
                 if(func_b(arr,i,j) == 1){
-                    printf("True \n");
+                    printf("True\n");
                 }
                 else{
-                    printf("False \n");
+                    printf("False\n");
                 }
             }
             if (ch == 'C')
